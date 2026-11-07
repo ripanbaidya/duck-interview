@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+
+@layer base {
+  :root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #e4e4e7;
+    background: var(--app-background);
+    color-scheme: dark;
+    --app-background: #040508;
+    --app-foreground: #e4e4e7;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --app-background: #f7f8fc;
+    --app-foreground: #202938;
+    color: var(--app-foreground);
+    background: var(--app-background);
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--app-background);
+    color: var(--app-foreground);
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+
+  button {
+    color: inherit;
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    color: #fff;
+    background: #1d4ed8;
+  }
+
+  :root[data-theme="light"] .bg-black {
+    background-color: var(--app-background) !important;
+  }
+
+  :root[data-theme="light"] [class*="bg-[#"] {
+    background-color: #fff !important;
+  }
+
+  :root[data-theme="light"] [class*="hover:bg-[#"]:hover,
+  :root[data-theme="light"] [class*="bg-white/"] {
+    background-color: #edf1f7 !important;
+  }
+
+  :root[data-theme="light"] [class~="bg-[#101a2d]"],
+  :root[data-theme="light"] [class~="bg-[#0b1422]"] {
+    background-color: #eaf1ff !important;
+  }
+
+  :root[data-theme="light"] [class*="bg-black/"] {
+    background-color: rgb(15 23 42 / 20%) !important;
+  }
+
+  :root[data-theme="light"] [class*="text-[#"] {
+    color: #202938 !important;
+  }
+
+  :root[data-theme="light"] [class~="text-[#a1a1aa]"],
+  :root[data-theme="light"] [class~="text-[#9999a3]"],
+  :root[data-theme="light"] [class~="text-[#92929c]"],
+  :root[data-theme="light"] [class~="text-[#8b8b95]"],
+  :root[data-theme="light"] [class~="text-[#888891]"],
+  :root[data-theme="light"] [class~="text-[#8d8d96]"],
+  :root[data-theme="light"] [class~="text-[#85858f]"],
+  :root[data-theme="light"] [class~="text-[#85858e]"],
+  :root[data-theme="light"] [class~="text-[#81818b]"],
+  :root[data-theme="light"] [class~="text-[#777780]"],
+  :root[data-theme="light"] [class~="text-[#72727c]"],
+  :root[data-theme="light"] [class~="text-[#676770]"],
+  :root[data-theme="light"] [class~="text-[#5e5e68]"],
+  :root[data-theme="light"] [class~="text-[#85808f]"],
+  :root[data-theme="light"] [class~="text-[#9a9aa4]"],
+  :root[data-theme="light"] [class~="text-[#9b9ba5]"],
+  :root[data-theme="light"] [class~="text-[#b4b4bd]"],
+  :root[data-theme="light"] [class~="text-[#c4c4cc]"] {
+    color: #667085 !important;
+  }
+
+  :root[data-theme="light"] [class~="text-[#60a5fa]"],
+  :root[data-theme="light"] [class~="text-[#93c5fd]"],
+  :root[data-theme="light"] [class~="text-[#bfdbfe]"],
+  :root[data-theme="light"] [class~="text-[#dbeafe]"] {
+    color: #2459b3 !important;
+  }
+
+  :root[data-theme="light"] [class*="border-[#"],
+  :root[data-theme="light"] [class*="border-white/"] {
+    border-color: #dce2eb !important;
+  }
+
+  :root[data-theme="light"] [class~="border-[#1e3a5f]"] {
+    border-color: #b7c9ed !important;
+  }
+
+  :root[data-theme="light"] .hljs {
+    color: #24292f !important;
+    background: transparent !important;
+  }
+
+  :root[data-theme="light"] .hljs-doctag,
+  :root[data-theme="light"] .hljs-keyword,
+  :root[data-theme="light"] .hljs-meta .hljs-keyword,
+  :root[data-theme="light"] .hljs-template-tag,
+  :root[data-theme="light"] .hljs-template-variable,
+  :root[data-theme="light"] .hljs-type,
+  :root[data-theme="light"] .hljs-variable.language_ {
+    color: #cf222e !important;
+  }
+
+  :root[data-theme="light"] .hljs-title,
+  :root[data-theme="light"] .hljs-title.class_,
+  :root[data-theme="light"] .hljs-title.class_.inherited__,
+  :root[data-theme="light"] .hljs-title.function_ {
+    color: #8250df !important;
+  }
+
+  :root[data-theme="light"] .hljs-attr,
+  :root[data-theme="light"] .hljs-attribute,
+  :root[data-theme="light"] .hljs-literal,
+  :root[data-theme="light"] .hljs-meta,
+  :root[data-theme="light"] .hljs-number,
+  :root[data-theme="light"] .hljs-operator,
+  :root[data-theme="light"] .hljs-variable,
+  :root[data-theme="light"] .hljs-selector-attr,
+  :root[data-theme="light"] .hljs-selector-class,
+  :root[data-theme="light"] .hljs-selector-id {
+    color: #0550ae !important;
+  }
+
+  :root[data-theme="light"] .hljs-string,
+  :root[data-theme="light"] .hljs-regexp,
+  :root[data-theme="light"] .hljs-meta .hljs-string {
+    color: #0a6b3b !important;
+  }
+
+  :root[data-theme="light"] .hljs-comment,
+  :root[data-theme="light"] .hljs-code,
+  :root[data-theme="light"] .hljs-formula {
+    color: #6e7781 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
