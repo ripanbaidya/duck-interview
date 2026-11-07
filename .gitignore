@@ -1,0 +1,36 @@
+.DS_Store
+
+.vscode/
+.idea/
+
+templates
+TODO
+
+# Dependencies
+node_modules/
+
+# Build output and caches
+dist/
+build/
+out/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Generated content catalog (created before dev/build)
+public/content-catalog.json
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Vercel local project metadata
+.vercel/
+
+# Package manager and runtime logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
