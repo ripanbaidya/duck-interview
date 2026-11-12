@@ -1,4 +1,5 @@
 import type { ContentFile, FolderNode } from '../types';
+import { getQuestionLink } from '../lib/questionLinks';
 import { Breadcrumbs } from './Breadcrumbs';
 import { FolderHeading } from './FolderHeading';
 import { MarkdownDocument } from './MarkdownDocument';
@@ -42,7 +43,11 @@ export function FolderPage({
   return (
     <div className="mx-auto w-full max-w-[1120px] px-[clamp(22px,4vw,58px)] pb-[72px] pt-[27px] max-[760px]:px-4 max-[760px]:pb-[50px] max-[760px]:pt-5 max-[420px]:px-3">
       <Breadcrumbs path={selectedPath} onNavigate={onNavigate} />
-      <FolderHeading folder={folder} hasDocumentation={readmes.length > 0} />
+      <FolderHeading
+        folder={folder}
+        hasDocumentation={readmes.length > 0}
+        questionLink={getQuestionLink(folder.path)}
+      />
       <SubfolderGrid folders={folder.children} isSectionRoot={isSectionRoot} onNavigate={onNavigate} />
 
       {primaryReadme && (
