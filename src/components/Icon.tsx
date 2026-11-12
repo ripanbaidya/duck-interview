@@ -7,6 +7,7 @@ import {
   FiCopy,
   FiFileText,
   FiFolder,
+  FiExternalLink,
   FiGithub,
   FiInfo,
   FiMenu,
@@ -30,7 +31,8 @@ export type IconName =
   | 'sun'
   | 'moon'
   | 'info'
-  | 'github';
+  | 'github'
+  | 'externalLink';
 
 const icons: Record<IconName, IconType> = {
   search: FiSearch,
@@ -47,6 +49,7 @@ const icons: Record<IconName, IconType> = {
   moon: FiMoon,
   info: FiInfo,
   github: FiGithub,
+  externalLink: FiExternalLink,
 };
 
 interface IconProps {
